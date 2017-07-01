@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript">
+  	function Animal(){
+　　　　this.species = '動物';
+　　}
+	function type(){
+　　　　this.type = '哺乳類';
+　　}
+
+	function Cats(name,color){
+
+		this.name=name;
+		this.color=color;
+	}
+
+	Cats.prototype = new Animal();
+	
+	//每一個 prototype 都會有一個 constructor 指向他的構造函數
+	//所以 Cats 的 constructor 原先是指向指向 cats , 但宣告後變成 Animal
+	//Cats 的 constructor 指向 Animal ,但這樣 cat1 的 constructor 也會變 Animal
+	//這樣繼承上會造成混亂
+	//所以 Cats.prototype.constructor 上 要指回 cats
+
+	Cats.prototype.constructor = Cats;
+
+	var cat1 = new Cats('虎斑','灰色');
+
+	console.log(cat1.species); 
+
+  </script>
+</head>
+<body>
+</body>
+</html>

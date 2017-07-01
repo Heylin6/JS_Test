@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript">
+  	function Animal(){
+　　　　this.species = '動物';
+　　}
+	function type(){
+　　　　this.type = '哺乳類';
+　　}
+
+	function Cats(name,color){
+
+		Animal.apply(this,arguments);
+		type.call(this,arguments);
+		this.name=name;
+		this.color=color;
+	}
+
+	var cat1 = new Cats('虎斑','灰色');
+
+	console.log(cat1.species); 
+	console.log(cat1.type); 
+
+	//用 call 或 apply 直接放入子類別
+
+
+  </script>
+</head>
+<body>
+</body>
+</html>

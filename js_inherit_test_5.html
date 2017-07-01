@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript">
+
+  //Copy繼承
+
+  function Animal(){}
+  Animal.prototype.species = '動物';
+　　
+  function Cats(name,color){
+
+	   this.name=name;
+	   this.color=color;
+  }
+
+  function extend_(Child,Parent){
+
+      	var Par = Parent.prototype;
+        var Chi = Child.prototype;
+  	
+        for(var i in Par)
+        {
+            Chi[i] = Par[i] ;   
+        }
+
+          Chi.uber = Par;
+	       // uber 為向上,上一層的意思,可直接叫用父對象的方法
+  }
+
+    extend_(Cats,Animal);
+　　var cat1 = new Cats("大毛","黄色");
+	  console.log(cat1.species); 
+
+  </script>
+</head>
+<body>
+</body>
+</html>
