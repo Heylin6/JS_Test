@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--<link rel="icon" type="image/x-icon" href="favicon.ico">-->
+  <script type="text/javascript">
+  	
+  var Grade = (function(){
+
+  	var _grd_100_91  = 'A';
+  	var _grd_90_81 = 'B';
+    var _grd_80_71 = 'C';
+    var _grd_70_60 = 'D';
+    var _grd_60_down = 'F';
+  	var _int;
+
+  	var foo = function(_int){
+
+      var resInt=Math.floor(_int/10);
+
+      switch(resInt)
+      {
+          case 10 : console.log(_grd_100_91);break;
+          case 9 :  console.log(_grd_100_91);break;
+          case 8 :  console.log(_grd_90_81);break;
+          case 7 :  console.log(_grd_80_71);break;
+          case 6 :  console.log(_grd_70_60);break;
+          default : console.log(_grd_60_down);break;
+      }
+				
+  	}
+  	return{
+  		foo:foo
+  	}
+  })();
+
+Grade.foo(100);
+Grade.foo(79);
+Grade.foo(98);
+Grade.foo(61);
+Grade.foo(20);
+
+//Math.round() ---四捨五入
+//Math.floor() ---取小於這個數的最大整數
+//Math.ceil()  ---取大於這個數的最小整數
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

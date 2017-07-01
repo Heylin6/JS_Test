@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--<link rel="icon" type="image/x-icon" href="favicon.ico">-->
+  <script type="text/javascript">
+
+　var Role = function(name,attack,num){
+　　　　
+      this.name=name;
+　　　this.attack=attack;
+      this.num=num;　     
+　}
+
+  //共同的用prototype繼承
+  Role.prototype.type='冒險者';
+  Role.prototype.death=function(){alert('角色已死亡,即將傳送回村莊');};
+
+  var role1 = new Role('劍士','斬擊',300);
+  var role2 = new Role('法師','火球術',450);
+
+  console.log(role1.name);
+  console.log(role1.attack);
+  console.log(role1.num);
+  console.log(role1.type);
+  console.log('------');
+  console.log(role2.name);
+  console.log(role2.attack);
+  console.log(role2.num);
+  console.log(role1.type);
+  </script>
+</head>
+<body>
+
+</body>
+</html>
