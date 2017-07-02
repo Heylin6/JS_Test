@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript">
+
+  //淺度copy會出現的狀況
+
+  var Asia={nation:'亞洲'};
+
+  var enggineer={career:'工程師'};
+
+  function deepCopy(p){
+
+      var c=c || {};
+
+      for(var i in p)
+      { 
+          if(typeof p[i] === 'object')
+          {
+            c[i] = (p[i].constructor === Array) ? [] : {};
+            deepCopy(p[i],c[i]);
+          }
+          else
+          {
+            c[i]=p[i];
+          }
+      }
+
+      return c;
+  }
+      // === 為嚴謹的運算判斷式
+      // 因為 JS 的特性 == 的運作是把左邊型別轉成右邊型別
+      // 所以 1 == "1" 在JS會通過
+      // === 三個等於財部會有轉換型別的問題
+
+    Asia.birthPlaces = ['中國','日本','新加坡'];
+    var enggineer = deepCopy(Asia);
+
+    console.log(enggineer.nation);
+
+
+    enggineer.birthPlaces.push('台灣');
+
+     console.log(Asia.birthPlaces);
+     console.log(enggineer.birthPlaces);
+
+     //JQuery的函式庫目前都用這種做法
+
+  </script>
+</head>
+<body>
+</body>
+</html>

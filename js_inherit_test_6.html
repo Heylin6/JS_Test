@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript">
+
+  //不使用構造函數做繼承
+
+  var Asia={nation:'亞洲'};
+
+  var enggineer={career:'工程師'};
+
+  function object(o){
+
+      function f(){}
+      f.prototype=o;
+      return new f();
+  }
+
+    var enggineer = object(Asia);
+    enggineer.career='工程師';
+
+    console.log(enggineer.nation);
+
+  </script>
+</head>
+<body>
+</body>
+</html>
